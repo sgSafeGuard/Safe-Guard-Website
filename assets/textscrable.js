@@ -53,12 +53,12 @@ class TextScramble {
 }
 
 const phrases = [
-    'All your favorite socials...',
-    'All in one place.',
-    'Tons of platforms.',
-    'Tons of customization.',
-    'All for free.',
-    'Get started now!'
+    'YouTuber',
+    'Tiktoker',
+    'Website Developer',
+    'JavaScript, CSS, HTML, PHP, Lua Programmer',
+    'The Man Himself (Kristian)',
+    'Owner of kristian.mk'
 ];
 
 const el = document.querySelector('.hero-text-description');
