@@ -1,0 +1,325 @@
+:root {
+  --font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+  --background-color-1: hsl(0, 0%, 1%);
+  --background-color-2: hsl(0, 0%, 12%);
+  --background-color-3: hsla(240, 3%, 6%, 0.5);
+
+  --text-color-1: hsl(30, 50%, 98%);
+  --text-color-2: hsl(0, 0%, 100%);
+
+  --hue-1: hsl(243, 75%, 59%);
+  --hue-2: hsl(201, 100%, 50%);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  background-color: var(--background-color-1);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  height: 4rem;
+  transition: background-color 0.2s, height 0.2s;
+}
+
+/* <div class="navbar-wrapper">
+<nav class="navbar">
+  <div class="navbar-icon">
+    <img src="img/logo.png" alt="logo" class="navbar-img" />
+  </div>
+  <div class="navbar-routes">
+    <a href="/" class="navbar-link">Home</a>
+    <a href="https://discord.gg/biolink" class="navbar-link">Discord</a>
+    <a href="/tos.html" class="navbar-link">ToS</a>
+    <a href="/premium.html" class="navbar-link hue">Premium</a>
+  </div>
+  <div class="dropdown">
+    <button>HubSpot Resources</button>
+    <div class="dropdown-content">
+    <a href="https://blog.hubspot.com/">Blog</a>
+    <a href="https://academy.hubspot.com/">Academy</a>
+    <a href="https://www.youtube.com/user/hubspot">YouTube</a>
+    </div>
+  </div>
+</nav>
+</div> */
+
+.navbar-icon {
+  left: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-icon:hover {
+  transform: scale(1.05);
+}
+
+.navbar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navbar-routes {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  align-items: center;
+}
+
+.navbar-link {
+  position: relative;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color-1);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-link:hover {
+  transform: scale(0.95);
+  filter: brightness(1.1);
+}
+
+.hue {
+  color: var(--hue-2);
+  font-weight: 600;
+}
+
+/* <div class="navbar-wrapper">
+<nav class="navbar">
+  <div class="navbar-icon">
+    <img src="img/logo.png" alt="logo" class="navbar-img" />
+  </div>
+  <div class="navbar-routes">
+    <a href="/" class="navbar-link">Home</a>
+    <a href="https://discord.gg/biolink" class="navbar-link">Discord</a>
+    <a href="/tos.html" class="navbar-link">ToS</a>
+    <a href="/premium.html" class="navbar-link hue">Premium</a>
+  </div>
+  <div class="dropdown">
+    <button><i class="fas fa-user"></i> USERNAME</button>
+    <div class="dropdown-content">
+      <a href="/"><i class="fas fa-home"></i> Dashboard</a>
+      <a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </div>
+</nav>
+</div> */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.dropdown button {
+  font-family: var(--font-family);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color-1);
+  background-color: var(--background-color-2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown button i {
+  margin-right: 0.5rem;
+}
+
+
+/*
+  make the content inline on the right but longer on the left 
+*/
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  background-color: var(--background-color-2);
+  border-radius: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color-1);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-content a:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown-content a i {
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  nav.navbar {
+    display: none;
+  }
+}
+
+
+
+#toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 999999;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 20px 0;
+  min-width: 400px;
+  max-width: 450px;
+  border-left: 4px solid;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  transition: all linear 0.3s;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.toast--success {
+  border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+  color: #47d864;
+}
+
+.toast--info {
+  border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+  color: #2f86eb;
+}
+
+.toast--warning {
+  border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+  color: #ffc021;
+}
+
+.toast--error {
+  border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+  color: #ff623d;
+}
+
+.toast + .toast {
+  margin-top: 24px;
+}
+
+.toast__icon {
+  font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+  padding: 0 16px;
+}
+
+.toast__body {
+  flex-grow: 1;
+}
+
+.toast__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.toast__msg {
+  font-size: 14px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.toast__close {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
