@@ -53,12 +53,12 @@ class TextScramble {
 }
 
 const phrases = [
-    'YouTuber',
-    'Tiktoker',
-    'Website Developer',
-    'JavaScript, CSS, HTML, PHP, Lua Programmer',
-    'The Man Himself (Kristian)',
-    'Owner of kristian.mk'
+    'Safe Guard',
+    'Security',
+    'Ban Database',
+    'Enhance your server security',
+    'Aim to provide top-level security',
+    'No more bullshit'
 ];
 
 const el = document.querySelector('.hero-text-description');
